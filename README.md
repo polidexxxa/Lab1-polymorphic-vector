@@ -2,7 +2,7 @@
 Realisation of a polymorphic vector in C
 
 
-##Makefile.mk
+## Makefile.mk
 # Собрать всё
 make
 # Запустить программу
