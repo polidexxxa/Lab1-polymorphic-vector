@@ -4,9 +4,11 @@ Realisation of a polymorphic vector in C
 
 ## Makefile.mk
 Собрать всё
+
 make
 
 Запустить программу
+
 make run
 
 Запустить тесты
