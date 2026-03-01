@@ -3,23 +3,29 @@ Realisation of a polymorphic vector in C
 
 
 ## Makefile.mk
-# Собрать всё
+Собрать всё
 make
-# Запустить программу
+
+Запустить программу
 make run
-# Запустить тесты
+
+Запустить тесты
 make test
-# Очистить
+
+Очистить
 make clean
 
 
-##Makefile.msvc
-# Открыть Developer Command Prompt для VS
-# Собрать всё 
+## Makefile.msvc
+Открыть Developer Command Prompt для VS
+Собрать всё 
 nmake /f Makefile.msvc
-# Запустить программу
+
+Запустить программу
 nmake /f Makefile.msvc run
-# Запустить тесты
+
+Запустить тесты
 nmake /f Makefile.msvc test
-# Очистить
+
+Очистить
 nmake /f Makefile.msvc clean
