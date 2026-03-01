@@ -2,7 +2,7 @@
 Realisation of a polymorphic vector in C
 
 
-Makefile.mk
+##Makefile.mk
 # Собрать всё
 make
 # Запустить программу
@@ -13,7 +13,7 @@ make test
 make clean
 
 
-Makefile.msvc
+##Makefile.msvc
 # Открыть Developer Command Prompt для VS
 # Собрать всё 
 nmake /f Makefile.msvc
