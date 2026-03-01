@@ -1,0 +1,51 @@
+CC = cl
+CFLAGS = /nologo /I. /D_CRT_SECURE_NO_WARNINGS
+#/W3 /Zi
+
+PROG = vector_program.exe
+TEST = vector_test.exe
+
+# Исходные файлы
+SRCS = types.c errors.c vector.c
+OBJS = $(SRCS:.c=.obj)
+
+# Все объектные файлы
+ALL_OBJS = $(OBJS) main.obj
+TEST_OBJS = $(OBJS) test_vector.obj
+
+all: $(PROG) $(TEST)
+
+# Сборка программы
+$(PROG): main.obj $(OBJS)
+	$(CC) $(CFLAGS) /Fe$@ main.obj $(OBJS)
+
+# Сборка тестов
+$(TEST): test_vector.obj $(OBJS)
+	$(CC) $(CFLAGS) /Fe$@ test_vector.obj $(OBJS)
+
+# Компиляция .c файлов в .obj
+.c.obj:
+	$(CC) $(CFLAGS) /c $<
+
+# Запуск программы
+run: $(PROG)
+	$(PROG)
+
+# Запуск тестов
+test: $(TEST)
+	$(TEST)
+
+# Очистка
+clean:
+	-del /Q *.obj *.exe *.pdb *.ilk 2>nul
+	@echo Clean completed
+
+# Зависимости
+main.obj: main.c vector.h errors.h
+test_vector.obj: test_vector.c vector.h errors.h
+types.obj: types.c types.h
+errors.obj: errors.c errors.h
+vector.obj: vector.c vector.h types.h errors.h
+
+# Объявляем цели, не являющиеся файлами
+.PHONY: all run test clean
